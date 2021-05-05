@@ -1,6 +1,6 @@
 <template>
   <Titulo texto="Titulo de mi blog"/>
-  <button @click="consumirApi">Cosnumir API</button>
+  <!-- <button @click="consumirApi">Cosnumir API</button> -->
   <div v-for="item in arrayBlog" :key="item.id">
       <router-link :to="`/blog/${item.id}`">
       {{ item.id }} - {{ item.title }}

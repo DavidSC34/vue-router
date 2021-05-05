@@ -1,8 +1,8 @@
 <template>
   <Titulo texto="Ruta con parametros" />
   <h2>Parametro {{$route.params.id}}</h2>
-  <h2>{{articulo.titulo}}</h2>
-  <p>{{articulo.cuerpo}}</p>
+  <h2>{{articulo.title}}</h2>
+  <p>{{articulo.id}} - {{articulo.body}}</p>
 </template>
 
 <script>
@@ -22,9 +22,10 @@ export default {
     async consumirApi() {
 
       try {
-        const id = this.$route.params.id;
-          const data = await fetch('https://jsonplaceholder.typicode.com/posts/'+id);
+       
+          const data = await fetch(`https://jsonplaceholder.typicode.com/posts/${this.$route.params.id}`);
           const postData = await data.json();
+          // console.log(postData);
           this.articulo = postData;
           
 
